@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70851f00a27da6e43ae8b7718d8f98e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uniqueID: 
   _resourceName: Wood
-  _produceRate: 1
+  _produceDuration: 1
   _maxResource: 1000
   _resourceText: {fileID: 2561673071896548459}
 --- !u!1 &6450637839685035112
