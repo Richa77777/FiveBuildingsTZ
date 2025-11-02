@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(AudioSource))]
 public class PlayerControl : MonoBehaviour
@@ -18,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     private AudioSource _audioSource;
 
     private Camera _camera;
+    private EventSystem _eventSystem;
     private Coroutine _moveCor;
 
     private bool _isCollecting = false;
@@ -31,13 +33,14 @@ public class PlayerControl : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _camera = Camera.main;
+        _eventSystem = EventSystem.current;
     }
 
     private void Update()
     {
         if (_isCollecting) return;
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !_eventSystem.IsPointerOverGameObject())
             HandleClick();
     }
 
