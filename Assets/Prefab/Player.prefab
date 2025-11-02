@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _humanoidHead: {fileID: 3539882151741141963}
-  _offset: {x: 0, y: 0.22, z: -0.22}
+  _offset: {x: 0, y: 0.25, z: -0.4}
 --- !u!1 &6846090775300299471
 GameObject:
   m_ObjectHideFlags: 0
