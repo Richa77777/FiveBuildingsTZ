@@ -14,6 +14,11 @@ public class PlayerControl : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip _collectResourcesSound;
 
+    [Header("Footsteps")]
+    [SerializeField] private AudioClip[] _footstepSounds;
+    [SerializeField] private float _footstepInterval = 0.5f;
+    private float _footstepTimer;
+
     private Animator _animator;
     private NavMeshAgent _agent;
     private AudioSource _audioSource;
@@ -39,6 +44,8 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         if (_isCollecting) return;
+
+        HandleFootsteps();
 
         if (Input.GetMouseButtonUp(0) && !_eventSystem.IsPointerOverGameObject())
             HandleClick();
@@ -171,6 +178,29 @@ public class PlayerControl : MonoBehaviour
         target.y = transform.position.y;
 
         return target;
+    }
+
+    private void HandleFootsteps()
+    {
+        if (_animator.GetBool("IsWalking") && _agent.velocity.magnitude > 0.1f)
+        {
+            _footstepTimer += Time.deltaTime;
+
+            if (_footstepTimer >= _footstepInterval)
+            {
+                PlayFootstepSound();
+                _footstepTimer = 0f;
+            }
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (_footstepSounds.Length == 0) return;
+
+        AudioClip clip = _footstepSounds[Random.Range(0, _footstepSounds.Length)];
+        _audioSource.pitch = Random.Range(0.95f, 1.05f);
+        _audioSource.PlayOneShot(clip);
     }
 
     #endregion
