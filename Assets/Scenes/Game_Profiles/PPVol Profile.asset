@@ -26,8 +26,8 @@ MonoBehaviour:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.457
   smoothness:
     overrideState: 0
     value: 0.2
@@ -147,11 +147,11 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.9560064, z: 0.8073013, w: 0}
   gamma:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.9992855, y: 0.9182053, z: 1, w: 0}
   gain:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
@@ -1372,11 +1372,11 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.45
   threshold:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.39
   softKnee:
     overrideState: 0
     value: 0.5
@@ -1439,8 +1439,8 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.93
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
